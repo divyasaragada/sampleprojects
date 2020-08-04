@@ -1,0 +1,9 @@
+{% extends 'myapp1/index.html' %}
+{% block content %}
+	<form action="{% url 'delete' info.id %}" method="POST" >
+	   {% csrf_token %}
+	   <h2>are you sure want to delete {{ info.id }}</h2>
+       <input type="submit" name="submit" value="DELETE">
+       <a href="{% url 'showbooks' %}">cancel</a>
+ </form>
+ {% endblock content %}

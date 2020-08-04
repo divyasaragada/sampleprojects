@@ -1,0 +1,11 @@
+{% extends 'myapp1/index.html' %}
+{% block content %}
+<br><br><br>
+<center>
+	<form  action ="{% url 'edit' data.id %}" method="POST">
+		{% csrf_token  %}
+      {{ info.as_p }}
+      <button>Update</button>
+  </form>
+</center>
+{% endblock content %}
